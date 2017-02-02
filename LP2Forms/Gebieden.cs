@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LP2Forms
 {
-    public partial class Form1 : Form
+    public partial class Gebieden : Form
     {
-        public Form1()
+        public Gebieden()
         {
             InitializeComponent();
         }
