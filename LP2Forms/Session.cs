@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LP2Forms.Models;
+﻿using LP2Forms.DomeinModellen;
 
 namespace LP2Forms
 {
     public static class Session
     {
-        private static bool _isLoggedIn = false;
-        private static Gebruiker _gebruiker;
+        private static bool _isLoggedIn;
+        public static Gebruiker Gebruiker;
 
         public static bool IsLoggedIn()
         {
@@ -20,7 +15,7 @@ namespace LP2Forms
         internal static void IsLoggedIn(bool isLoggedIn, Gebruiker gebruiker)
         {
             _isLoggedIn = isLoggedIn;
-            _gebruiker = gebruiker;
+            Gebruiker = gebruiker;
         }
     }
 }

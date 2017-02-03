@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using LP2Forms.Contexts;
-using LP2Forms.Models;
+using LP2Forms.DomeinModellen;
+using LP2Forms.Exceptions;
 using LP2Forms.Repositories;
 
 namespace LP2Forms
@@ -45,7 +46,11 @@ namespace LP2Forms
                     lblErrors.Text += "Deze gebruikersnaam is al door een ander gekozen";
                 }
                 if (Session.IsLoggedIn())
-                this.Close();
+                Close();
+                if (string.IsNullOrWhiteSpace(lblErrors.Text) && !Session.IsLoggedIn())
+                    lblErrors.Text += "Oops, er is iets fout gegaan.\n" +
+                                      "Neem alstublieft contact op met uw beheerder.\n" +
+                                      "Onze excuses voor het ongemak.";
             }
         }
     }

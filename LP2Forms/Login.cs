@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LP2Forms.Contexts;
+using LP2Forms.DomeinModellen;
 using LP2Forms.Exceptions;
 using LP2Forms.Repositories;
 
@@ -21,36 +14,11 @@ namespace LP2Forms
         {
             if (Session.IsLoggedIn())
             {
-                this.Hide();
+                Hide();
                 new Gebieden().Show();
             }
             InitializeComponent();
             _repo = new UserRepository(new UserSQLContext(new DatabaseConnector()));
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -67,7 +35,7 @@ namespace LP2Forms
                     _repo.Login(tbGebruikersnaam.Text, TbWachtwoord.Text);
                     if (Session.IsLoggedIn())
                     {
-                        this.Hide();
+                        Hide();
                         new Gebieden().Show();
                     }
                     else
@@ -98,9 +66,17 @@ namespace LP2Forms
             registreer.ShowDialog();
             if (Session.IsLoggedIn())
             {
-                this.Hide();
+                Hide();
                 new Gebieden().Show();
             }
+        }
+
+        private void skipButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new Veldkaart(new Gebied() {
+                Naam = "Offline Gebied",
+            ActiefProject = new Project()}).Show();
         }
     }
  }

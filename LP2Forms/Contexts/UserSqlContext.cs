@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using LP2Forms.DomeinModellen;
 using LP2Forms.Exceptions;
-using LP2Forms.Models;
 
 namespace LP2Forms.Contexts
 {
@@ -81,9 +81,9 @@ namespace LP2Forms.Contexts
 
             try
             {
+                ICollection<Gebruiker> gebruikerList = new List<Gebruiker>();
                 using (reader = DatabaseConnector.RunCommand(cmd))
                 {
-                    ICollection<Gebruiker> gebruikerList = new List<Gebruiker>();
                     while (reader != null && reader.Read())
                     {
                         Gebruiker gebruiker = new Gebruiker
@@ -96,12 +96,13 @@ namespace LP2Forms.Contexts
                         gebruikerList.Add(gebruiker);
                     }
                 }
+                return gebruikerList;
             }
             catch (SqlException e)
             {
                 Console.WriteLine(e);
             }
-            return new List<Gebruiker>();
+            return null;
         }
 
         /// <summary>

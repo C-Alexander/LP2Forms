@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using LP2Forms.Contexts;
-using LP2Forms.Models;
+using LP2Forms.DomeinModellen;
 
 namespace LP2Forms.Repositories
 {

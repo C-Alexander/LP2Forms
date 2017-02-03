@@ -37,6 +37,7 @@
             this.lblGebruikersnaam = new System.Windows.Forms.Label();
             this.TbWachtwoord = new System.Windows.Forms.TextBox();
             this.tbGebruikersnaam = new System.Windows.Forms.TextBox();
+            this.skipButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.gbLogin.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +67,6 @@
             this.gbLogin.TabIndex = 1;
             this.gbLogin.TabStop = false;
             this.gbLogin.Text = "Login";
-            this.gbLogin.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnRegistreer
             // 
@@ -104,8 +104,7 @@
             this.lblWachtwoord.Name = "lblWachtwoord";
             this.lblWachtwoord.Size = new System.Drawing.Size(71, 13);
             this.lblWachtwoord.TabIndex = 3;
-            this.lblWachtwoord.Text = "Wachtwoord:";
-            this.lblWachtwoord.Click += new System.EventHandler(this.label2_Click);
+            this.lblWachtwoord.Text = "Wachtwoord:";  
             // 
             // lblGebruikersnaam
             // 
@@ -115,7 +114,6 @@
             this.lblGebruikersnaam.Size = new System.Drawing.Size(87, 13);
             this.lblGebruikersnaam.TabIndex = 2;
             this.lblGebruikersnaam.Text = "Gebruikersnaam:";
-            this.lblGebruikersnaam.Click += new System.EventHandler(this.label1_Click);
             // 
             // TbWachtwoord
             // 
@@ -124,7 +122,6 @@
             this.TbWachtwoord.PasswordChar = '*';
             this.TbWachtwoord.Size = new System.Drawing.Size(187, 20);
             this.TbWachtwoord.TabIndex = 1;
-            this.TbWachtwoord.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // tbGebruikersnaam
             // 
@@ -133,16 +130,26 @@
             this.tbGebruikersnaam.Size = new System.Drawing.Size(187, 20);
             this.tbGebruikersnaam.TabIndex = 0;
             // 
+            // skipButton
+            // 
+            this.skipButton.Location = new System.Drawing.Point(527, 12);
+            this.skipButton.Name = "skipButton";
+            this.skipButton.Size = new System.Drawing.Size(99, 23);
+            this.skipButton.TabIndex = 5;
+            this.skipButton.Text = "Geen Internet";
+            this.skipButton.UseVisualStyleBackColor = true;
+            this.skipButton.Click += new System.EventHandler(this.skipButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 469);
+            this.Controls.Add(this.skipButton);
             this.Controls.Add(this.gbLogin);
             this.Controls.Add(this.pbLogo);
             this.Name = "Login";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.gbLogin.ResumeLayout(false);
             this.gbLogin.PerformLayout();
@@ -161,6 +168,7 @@
         private System.Windows.Forms.Button btnRegistreer;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblErrors;
+        private System.Windows.Forms.Button skipButton;
     }
 }
 

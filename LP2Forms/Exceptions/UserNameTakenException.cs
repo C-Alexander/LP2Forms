@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace LP2Forms.Contexts
+namespace LP2Forms.Exceptions
 {
     [Serializable]
-    internal class UserNameTakenException : Exception
+    public class UserNameTakenException : Exception
     {
         public UserNameTakenException()
         {

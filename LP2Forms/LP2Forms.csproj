@@ -46,9 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\IDierSQLContext.cs" />
+    <Compile Include="Models\DierSoort.cs" />
+    <Compile Include="Contexts\IGebiedenSQLContext.cs" />
     <Compile Include="Contexts\IUserContext.cs" />
+    <Compile Include="Repositories\DierRepository.cs" />
+    <Compile Include="Contexts\DierSQLContext.cs" />
+    <Compile Include="DomeinModellen\Bezoek.cs" />
+    <Compile Include="DomeinModellen\Dier.cs" />
+    <Compile Include="DomeinModellen\Gebied.cs" />
+    <Compile Include="DomeinModellen\Project.cs" />
+    <Compile Include="DomeinModellen\Waarneming.cs" />
+    <Compile Include="DomeinModellen\WaarnemingsSoort.cs" />
     <Compile Include="Exceptions\UserNameTakenException.cs" />
-    <Compile Include="Contexts\UserSqlContext.cs" />
+    <Compile Include="Contexts\UserSQLContext.cs" />
     <Compile Include="DatabaseConnector.cs" />
     <Compile Include="Gebieden.cs">
       <SubType>Form</SubType>
@@ -56,6 +67,14 @@
     <Compile Include="Gebieden.Designer.cs">
       <DependentUpon>Gebieden.cs</DependentUpon>
     </Compile>
+    <Compile Include="NieuweWaarneming.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NieuweWaarneming.Designer.cs">
+      <DependentUpon>NieuweWaarneming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\GebiedenRepository.cs" />
+    <Compile Include="Contexts\GebiedenSQLContext.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,7 +82,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="IDatabaseConnector.cs" />
-    <Compile Include="Models\Gebruiker.cs" />
+    <Compile Include="DomeinModellen\Gebruiker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exceptions\UsernameNotFoundException.cs" />
@@ -74,11 +93,40 @@
     <Compile Include="Registreer.Designer.cs">
       <DependentUpon>Registreer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\IDierRepository.cs" />
+    <Compile Include="Repositories\IGebiedenRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="SimpleFactories.cs" />
+    <Compile Include="Teller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teller.Designer.cs">
+      <DependentUpon>Teller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veldkaart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veldkaart.Designer.cs">
+      <DependentUpon>Veldkaart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\WaarnemingsSoortRepository.cs" />
+    <Compile Include="Contexts\WaarnemingsSoortSQLContext.cs" />
+    <Compile Include="ViewWaarneming.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewWaarneming.Designer.cs">
+      <DependentUpon>ViewWaarneming.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Gebieden.resx">
+      <DependentUpon>Gebieden.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NieuweWaarneming.resx">
+      <DependentUpon>NieuweWaarneming.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +140,15 @@
     </Compile>
     <EmbeddedResource Include="Registreer.resx">
       <DependentUpon>Registreer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teller.resx">
+      <DependentUpon>Teller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veldkaart.resx">
+      <DependentUpon>Veldkaart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewWaarneming.resx">
+      <DependentUpon>ViewWaarneming.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,6 +165,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\lege_veldkaart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VA.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

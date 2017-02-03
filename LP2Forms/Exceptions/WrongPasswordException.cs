@@ -2,7 +2,7 @@
 
 namespace LP2Forms.Exceptions
 {
-    internal class WrongPasswordException : Exception
+    public class WrongPasswordException : Exception
     {
         public WrongPasswordException()
         {

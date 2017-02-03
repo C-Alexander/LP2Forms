@@ -2,7 +2,7 @@
 
 namespace LP2Forms.Exceptions
 {
-    internal class UsernameNotFoundException : Exception
+    public class UsernameNotFoundException : Exception
     {
         public UsernameNotFoundException()
         {

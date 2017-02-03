@@ -1,4 +1,4 @@
-﻿namespace LP2Forms.Models
+﻿namespace LP2Forms.DomeinModellen
 {
     public class Gebruiker
     {
@@ -6,5 +6,6 @@
         public string Gebruikersnaam { get; set; }
         public string Naam { get; set; }
         public string Wachtwoord { get; set; }
+        public Project Project { get; set; }
     }
 }
